@@ -162,7 +162,7 @@
                         <artifactId>maven-gpg-plugin</artifactId>
                         <version>1.6</version>
                         <configuration>
-                            <keyname>9A4A3839</keyname>
+                            <keyname>41255786</keyname>
                             <passphraseServerId>ossrh</passphraseServerId>
                         </configuration>
                         <executions>
