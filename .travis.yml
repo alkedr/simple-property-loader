@@ -1,0 +1,10 @@
+language: java
+jdk:
+  - oraclejdk8
+install: true
+script: mvn test
+deploy:
+  provider: script
+  script: ./travis-deploy.sh
+  on:
+    branch: master
