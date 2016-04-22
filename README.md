@@ -7,6 +7,9 @@ A simpler alternative to [QATools properties-loader](http://mvnrepository.com/ar
 
 ### Examples
 
+All examples assume you have
+```import static com.github.alkedr.SimplePropertyLoader.*;```
+
 ##### Get optional `String` property
 ```
 Optional<String> x = getOptionalSystemProperty("my.property");
