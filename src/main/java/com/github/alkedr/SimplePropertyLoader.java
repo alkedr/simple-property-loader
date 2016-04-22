@@ -4,12 +4,6 @@ import java.util.Optional;
 import java.util.function.Function;
 import java.util.stream.Stream;
 
-// simple:   getProperty("my.property", Long::valueOf)
-// default:  getProperty("my.property", optional(Long::valueOf)).orElse(-1)
-// Не использовать String.valueOf, потому что нуллы!
-// TODO: пример использования с файлами (несколько источников пропертей)
-// TODO: ссылки на пропертилоадер и овнер в ридми
-// TODO: Pattern.compile(",")::splitAsStream in examples
 public class SimplePropertyLoader {
     private static final SimplePropertyLoader PROPERTY_LOADER_FROM_SYSTEM_GET_PROPERTY = new SimplePropertyLoader(System::getProperty);
 
@@ -43,7 +37,6 @@ public class SimplePropertyLoader {
         return getOptionalProperty(name).map(value -> invokeParser(parser, name, value));
     }
 
-    // Stream, возвращённый splitter'ом, не должен быть параллельным
     public <T> Optional<Stream<T>> getOptionalProperty(String name, PropertyValueParser<Stream<String>> splitter,
                                                        PropertyValueParser<T> elementParser) {
         return getOptionalProperty(name)
